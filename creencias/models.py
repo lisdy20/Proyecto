@@ -13,5 +13,3 @@ class Creencias(models.Model):
     class Meta:
         verbose_name = 'Creencia Religiosa'
         verbose_name_plural = 'Creencias Religiosas'
-        managed = False
-        db_table = 'creencias'

@@ -17,5 +17,3 @@ class Tipodonacion(models.Model):
     class Meta:
         verbose_name = 'Tipo de Donación'
         verbose_name_plural = 'Tipo de Donaciones'
-        managed = False
-        db_table = 'tipodonacion'

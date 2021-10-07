@@ -14,5 +14,3 @@ class Ruta(models.Model):
     class Meta:
         verbose_name = 'Ruta'
         verbose_name_plural = 'Rutas'
-        managed = False
-        db_table = 'ruta'
