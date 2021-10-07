@@ -68,10 +68,3 @@ class Voluntario(models.Model):
             array.append('[{} - {}hrs]'.format(d.diaarealizar , d.horasaprox))
         print(array)
         return array
-
-
-    class Meta:
-        verbose_name = 'Voluntario'
-        verbose_name_plural = 'Voluntarios'
-        managed = False
-        db_table = 'voluntario'

@@ -27,5 +27,3 @@ class Salidamigrante(models.Model):
     class Meta:
         verbose_name = 'Salida de Migrante'
         verbose_name_plural = 'Salidas de Migrante'
-        managed = False
-        db_table = 'salidamigrante'

@@ -21,5 +21,3 @@ class Modulo(models.Model):
     class Meta:
         verbose_name = 'Módulo'
         verbose_name_plural = 'Módulos'
-        managed = False
-        db_table = 'modulo'

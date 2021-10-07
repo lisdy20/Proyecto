@@ -32,5 +32,3 @@ class Migrante(models.Model):
     class Meta:
         verbose_name = 'Migrante'
         verbose_name_plural = 'Migrantes'
-        managed = False
-        db_table = 'migrante'

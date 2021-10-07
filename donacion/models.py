@@ -21,5 +21,3 @@ class Donacion(models.Model):
     class Meta:
         verbose_name = 'Donación'
         verbose_name_plural = 'Donaciones'
-        managed = False
-        db_table = 'donacion'
