@@ -2,6 +2,7 @@
 from django.db import models
 from caravanamigrante.models import Caravanamigrante
 from authuser.models import AuthUser
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -22,8 +23,8 @@ class Migrante(models.Model):
     edad = models.IntegerField('Edad:', db_column='Edad') 
     fechanacimiento = models.DateField('Fecha de Nacimiento:', db_column='FechaNacimiento')
     nacionalidad = models.CharField('Nacionalidad:', db_column='Nacionalidad', max_length=50)
-    caravana = models.ForeignKey(Caravanamigrante, models.DO_NOTHING, db_column='FkIdCaravana') 
-    usuario = models.ForeignKey(AuthUser, models.DO_NOTHING, db_column='FKIdUsuario')
+    caravana = models.ForeignKey(Caravanamigrante, on_delete=models.CASCADE, blank=True, null=True) 
+    usuario = models.ForeignKey(User, models.DO_NOTHING, db_column='FKIdUsuario')
 
 
     def __str__(self):
@@ -32,5 +33,3 @@ class Migrante(models.Model):
     class Meta:
         verbose_name = 'Migrante'
         verbose_name_plural = 'Migrantes'
-        managed = False
-        db_table = 'migrante'

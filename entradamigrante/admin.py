@@ -5,6 +5,7 @@ from entradamigrante.models import Entradamigrante
 
 class EntradaMigranteAdmin(admin.ModelAdmin):
     list_display = ['migrante', 'fechaentrada', 'módulo']
+    exclude = ['checkout']
     list_filter = ['módulo']
     search_fields = ['migrante']
 

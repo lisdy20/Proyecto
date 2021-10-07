@@ -8,15 +8,14 @@ from migrante.models import Migrante
 
 class MigranteTabular(admin.TabularInline):
 	model = Migrante
-	extra = 0
-	min_num = 1
-	max_num = 15
+	extra = 1
 
 class CaravanamigranteAdmin(admin.ModelAdmin):
-    inlines= [MigranteTabular,]
+    inlines= [MigranteTabular]
+    search_fields = ['nombre' , 'país']
     list_display = ['nombre', 'país', 'origen']
-    list_filter = ['país']
-    search_fields = ['nombre', 'país']
-    
+    ordering = ['nombre']
+    #autocomplete_fields = ['caravanamigrante']
+
 
 admin.site.register(Caravanamigrante, CaravanamigranteAdmin)

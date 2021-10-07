@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RUTA DE RIESGO</title>
+  </head>
+  <body>
+    <h1>wey vas para {{ruta.nombre}}</h1>
+    {%if ruta.idruta == 1%}
+      <p>que te vaya bien...</p>
+    {%endif%}
+    {%if ruta.idruta == 2%}
+      <p>espero comas tacos...</p>
+    {%endif%}
+    {%if ruta.idruta == 3%}
+      <p>aguas con los de huehue </p>
+    {%endif%}
+    
+    <img src="{%static 'img/umg.jpg' %} style="width:175px; height:175px;">
+  </body>
+</html>

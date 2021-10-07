@@ -37,5 +37,3 @@ class Diasdevoluntariado(models.Model):
     class Meta:
         verbose_name = 'Día de Voluntariado'
         verbose_name_plural = 'Días de Voluntariado'
-        managed = False
-        db_table = 'diasdevoluntariado'

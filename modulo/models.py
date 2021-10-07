@@ -14,12 +14,10 @@ class Modulo(models.Model):
         return '%s' % (self.nombre)
 
     def disponibilidad(self):
-        migrantes = Entradamigrante.objects.filter(módulo_id=self.pk)
+        migrantes = Entradamigrante.objects.filter(módulo_id=self.pk , checkout=False)
         diponible = self.capacidad - migrantes.count()
         return diponible
 
     class Meta:
         verbose_name = 'Módulo'
         verbose_name_plural = 'Módulos'
-        managed = False
-        db_table = 'modulo'

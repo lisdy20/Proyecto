@@ -13,5 +13,3 @@ class Origencaravana(models.Model):
     class Meta:
         verbose_name = 'Origen Caravana'
         verbose_name_plural = 'Origen Caravanas'
-        managed = False
-        db_table = 'origencaravana'

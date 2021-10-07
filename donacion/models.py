@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from authuser.models import AuthUser
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -12,7 +14,7 @@ class Donacion(models.Model):
     descripcion = models.CharField('Descripción', db_column='Descripcion', max_length=254, blank=True,
         null=True)  
     fechadeentrega = models.DateTimeField('Entrega', db_column='FechaDeEntrega')
-    usuario = models.ForeignKey(AuthUser, models.DO_NOTHING, db_column='FKIdUsuario')
+    usuario = models.ForeignKey(User, models.DO_NOTHING, db_column='FKIdUsuario')
 
 
     def __str__(self):
@@ -21,5 +23,3 @@ class Donacion(models.Model):
     class Meta:
         verbose_name = 'Donación'
         verbose_name_plural = 'Donaciones'
-        managed = False
-        db_table = 'donacion'

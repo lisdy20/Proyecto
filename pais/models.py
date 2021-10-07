@@ -13,5 +13,3 @@ class Pais(models.Model):
     class Meta:
         verbose_name = 'País'
         verbose_name_plural = 'Países'
-        managed = False
-        db_table = 'pais'
