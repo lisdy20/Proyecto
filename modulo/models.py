@@ -14,7 +14,7 @@ class Modulo(models.Model):
         return '%s' % (self.nombre)
 
     def disponibilidad(self):
-        migrantes = Entradamigrante.objects.filter(módulo_id=self.pk)
+        migrantes = Entradamigrante.objects.filter(módulo_id=self.pk , checkout=False)
         diponible = self.capacidad - migrantes.count()
         return diponible
 

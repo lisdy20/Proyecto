@@ -9,6 +9,7 @@ class Entradamigrante(models.Model):
     #salida = models.BooleanField("Salida" , default=False)
     migrante = models.ForeignKey(Migrante, models.DO_NOTHING, db_column='FkIdMigrante') 
     fechaentrada = models.DateTimeField('Fecha de Entrada', db_column='FechaEntrada') 
+    checkout = models.BooleanField('Ha marcado salida?', default=False)
     módulo = models.ForeignKey(
         'modulo.modulo',
         related_name='modulo', 
