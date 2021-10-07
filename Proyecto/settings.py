@@ -94,12 +94,8 @@ WSGI_APPLICATION = 'Proyecto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'casamigrante',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3309',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database.sqlite3',
     }
 }
 

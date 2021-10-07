@@ -2,3 +2,10 @@ misModelos.txt
 casamigrante
 database.sqlite3
 db
+*.pyc
+migrations/
+__pycache__/
+media/
+*.jpg
+*.idea
+*.vs
