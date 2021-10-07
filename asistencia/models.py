@@ -15,3 +15,10 @@ class Asistencia(models.Model):
 
     def __str__(self):
         return '%s' % (self.voluntario)
+
+    """def save(self, *args, **kwargs):
+        TO_DO: Crear un metodo en otro fichero 
+        que utilice request.user.pk para sobreescribir
+        cada movimiento con el usuario que este logeado
+        y guardarlo en usuario de cada registro.
+    """
