@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.utils.safestring import mark_safe
+from entradamigrante.models import Entradamigrante
 from migrante.models import Migrante
 from ruta.models import Ruta
 
@@ -15,17 +17,23 @@ class Salidamigrante(models.Model):
         return '%s %s' % (self.migrante, self.ruta)
 
     
-    def save(self):
+    def save(self, *args, **kwargs):
         """
-            TO_DO: Al crear una nueva salida, debe pasar la entrada de
-            ese migrante a un estado falso para poder saber si ese migrante
-            ya se fue. con eso podemos restar a la capacidad
+           Obtenemos la ultima entrada del migrante sobreescribimos un valor a
+           True para valer que esta entrada ya no cuenta debido que el migrante
+           ya hizo su salida.
+           Vease la funcion en modelo de Modulo -> def disponibilidad
         """
+        entrada = Entradamigrante.objects.filter(migrante=self.migrante).last() 
+        entrada.checkout = True
+        entrada.save()
+        super(Salidamigrante, self).save(*args, **kwargs)
         pass
 
 
     class Meta:
         verbose_name = 'Salida de Migrante'
         verbose_name_plural = 'Salidas de Migrante'
-        managed = False
-        db_table = 'salidamigrante'
+
+    def pdf_comprobante(self):
+        return mark_safe(u'<a href="/ruta-de-riesgo/?id=%s" target="_blank" class="addlink">IMPRIMIR</a>'% self.ruta.pk)

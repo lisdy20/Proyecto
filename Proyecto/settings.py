@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'voluntario',
     'asistencia',
     'authuser',
+    'easy_pdf'
     
 
 ]
@@ -94,12 +95,8 @@ WSGI_APPLICATION = 'Proyecto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'casamigrante',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3309',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database.sqlite3',
     }
 }
 
@@ -141,6 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
