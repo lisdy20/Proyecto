@@ -14,15 +14,12 @@ class CaravanamigranteAdmin(admin.ModelAdmin):
     inlines= [MigranteTabular]
     search_fields = ['nombre' , 'país']
     list_display = ['nombre', 'país', 'origen']
-<<<<<<< Updated upstream
     ordering = ['nombre']
     #autocomplete_fields = ['caravanamigrante']
 
-=======
     list_filter = ['país']
     search_fields = ['nombre', 'país']
     
     
->>>>>>> Stashed changes
 
 admin.site.register(Caravanamigrante, CaravanamigranteAdmin)

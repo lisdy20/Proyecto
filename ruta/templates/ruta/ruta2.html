@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <br><br>
+    <h1 class="text-center">{{ruta.nombre}}</h1>
+    <br>
+    <div class="row">
+<div class="col-md-4">
+    <div class="card shadow-lg">
+        <h4 class="text-center">Ruta prevista:</h4>
+        <div class="card-body">
+            <p class="card-text">Se toma un autobús de nombre Stand Board, en la Aguilar Batres.</p>
+        </div>
+    </div>
+</div>
+<div class="col-md-2 text-center">
+    <div class="card shadow-lg">
+        <h4>Direccion:</h4>
+        <div class="card-body">
+          <p class="card-text">Dirección: 0 calle 0-22 colonia Olguita de León, Tecun Umán. </p>
+        </div>
+      </div>
+</div>
+<div class="col-md-2 text-center">
+    <div class="card shadow-lg" id="div3">
+        <h4>Telefono:</h4>
+        <div class="card-body">
+            <p class="card-text">Teléfono: (502) 7776-8416.</p>
+        </div>
+    </div>
+</div>
+</div>
+    <br>
+        <div class="container text-center items">
+            <th style="width: 175px; height:175px; justify-content: right;"><img src="/media/Mesilla.png" style="width: 500px; height:500px" class="img">
+        </div>
+<br>
+</div>
+</body>
+<style type="text/css">
+/* .items{
+    border:1px solid red;
+    
+} */
+.card{
+    /* background-color: #689764; */
+    height: 100%;
+    width:100%;
+    border-radius: 15px;
+    display:flex;
+    flex-direction: column;
+}
+img{
+    width:50rem;
+    height:50rem;
+    border-radius: 15px;
+    
+}
+.col-md-4, .col-md-2{
+    /* border: 1px solid blue; */
+    width: 25rem;
+    height:13rem;
+    flex:0 0 auto;
+    margin-left: 15px;
+}
+
+.card-body{
+    background-color: #cfedcc;
+    border-radius: 15px;
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+}
+.row{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.text-center{
+    text-align: center;
+}
+.shadow-lg{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+}
+</style>
+</html>
