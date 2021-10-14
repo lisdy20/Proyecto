@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'voluntario',
     'asistencia',
     'authuser',
+    'entidad',
+    'tipo',
     'easy_pdf'
     
 
