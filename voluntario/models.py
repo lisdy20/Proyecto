@@ -6,6 +6,8 @@ from authuser.models import AuthUser
 from asistencia.models import Asistencia
 from diasdevoluntariado.models import Diasdevoluntariado
 from django.contrib.auth.models import User
+from django.utils.safestring import mark_safe
+
 
 
 
@@ -79,8 +81,12 @@ class Voluntario(models.Model):
         return "{}.hrs".format(tiempo_total)
     
     def edad(self):
-        cadena = int((timezone.now().date() - self.fechanacimiento).days / 365.25)
-        return cadena
+        try:
+            cadena = int((timezone.now().date() - self.fechanacimiento).days / 365.25)
+            return cadena
+        except:
+            cadena = []
+            return cadena
 
     def dias_voluntariado(self):
         """
@@ -93,3 +99,6 @@ class Voluntario(models.Model):
         for d in dias:
             array.append('[{} - {}hrs]'.format(d.diaarealizar , d.horasaprox))
         return array
+
+    def diploma(self):
+        return mark_safe(u'<a href="/voluntario-diploma/?id=%s" target="_blank" class="addlink">Diploma</a>'% self.pk)

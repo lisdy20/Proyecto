@@ -4,7 +4,7 @@ from voluntario.models import Voluntario
 # Register your models here.
 
 class VoluntarioAdmin(admin.ModelAdmin):
-    list_display = ['nombre', 'apellido', 'telefono', 'asistencia', 'dias_voluntariado' , 'genero', 'edad', 'fechanacimiento', 'nacionalidad', 'correo', 'direccion', 'tipovoluntario', 'creencias', 'usuario']
+    list_display = ['nombre', 'apellido', 'telefono', 'asistencia', 'dias_voluntariado' , 'genero', 'edad', 'fechanacimiento', 'nacionalidad', 'correo', 'direccion', 'tipovoluntario', 'creencias', 'diploma']
     list_filter = ['genero', 'creencias']
     search_fields = ['nombre', 'apellido']
 

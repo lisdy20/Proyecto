@@ -20,6 +20,10 @@ class Tipodonacion(models.Model):
     def tipodonacion(self):
         return self.tipodonacion_set.all()
 
+    @property
+    def tipodonacion(self):
+        return self.tipodonacion_set.all()
+
     class Meta:
         verbose_name = 'Detalle de Donación'
         verbose_name_plural = 'Detalle de Donaciones'
