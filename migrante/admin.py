@@ -4,7 +4,7 @@ from migrante.models import Migrante
 # Register your models here.
 
 class MigranteAdmin(admin.ModelAdmin):
-    list_display = ['nombre','apellido', 'telefono', 'genero', 'edad', 'fechanacimiento', 'nacionalidad', 'usuario']
+    list_display = ['nombre','apellido', 'telefono', 'genero', 'fechanacimiento', 'nacionalidad', 'usuario']
     list_filter = ['genero', 'nacionalidad']
     search_fields = ['nombre','apellido']
     
