@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_interface',
-    'colorfield',
+    #'admin_interface',
+    #'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'voluntario',
     'asistencia',
     'authuser',
+    'entidad',
+    'tipo',
     'easy_pdf'
     
 
@@ -96,14 +98,21 @@ WSGI_APPLICATION = 'Proyecto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'casamigrante',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'HOST': 'localhost',
+#        'PORT': '3309',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'casamigrante',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3309',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database',
     }
 }
 
