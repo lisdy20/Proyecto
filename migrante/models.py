@@ -27,9 +27,12 @@ class Migrante(models.Model):
     usuario = models.ForeignKey(User, models.DO_NOTHING, db_column='FKIdUsuario')
 
     def edad(self):
-        cadena = int((timezone.now().date() - self.fechanacimiento).days / 365.25)
-        return cadena
-
+        try:
+            cadena = int((timezone.now().date() - self.fechanacimiento).days / 365.25)
+            return cadena
+        except:
+            cadena  = []
+            return cadena
 
     def __str__(self):
         return '%s %s' % (self.nombre, self.apellido)

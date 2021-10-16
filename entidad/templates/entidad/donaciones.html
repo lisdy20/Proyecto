@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DONACIONES</title>
+  </head>
+  <body>
+    {%if donaciones%}
+      <h1>DONACIONES MENSUALES</h1>
+      {%for d in donaciones%}
+        <h4>Donador: {{d.nombre}}</h4>
+        <h4>Fecha de donacion: {{d.fechadeentrega}}</h4>
+        <table >
+      <tr>
+        <th>ITEM</th>
+        <th>TIPO DONATIVO</th>
+        <th>CANTIDAD DONADA</th>
+      </tr>
+        {%for det in detalle%}
+            {%if det.donacion.pk == d.pk%}
+        <tr>
+                <td style="text-align:center">{{det.item}}</td>
+                <td style="text-align:center">{{det.tipo.nombre}}</td>
+                <td style="text-align:center">{{det.cantidad}}</td>
+        </tr>
+            {%endif%}
+        {%endfor%}
+    </table>
+    <br>
+    <hr>
+    {%endfor%}
+    {%else%}
+    <p>No se encontraron registros...</p>
+    {%endif%}
+  </body>
+</html>

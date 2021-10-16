@@ -1,11 +1,13 @@
 misModelos.txt
 casamigrante
 database.sqlite3
+database
 db
 *.pyc
 migrations/
 __pycache__/
 media/
+settings.py
 *.jpg
 *.idea
 *.vs

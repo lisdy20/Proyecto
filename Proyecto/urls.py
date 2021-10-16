@@ -18,9 +18,14 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import url
+from entidad.views import DonacionHistorialPDF, DonacionMensualesPDF
 from ruta.views import RutaPDF
+from voluntario.views import DiplomaPDF
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r"^ruta-de-riesgo/(?P<id>)" , RutaPDF.as_view())
+    url(r"^ruta-de-riesgo/(?P<id>)" , RutaPDF.as_view()),
+    url(r"^donaciones-mensuales/(?P<id>)" , DonacionMensualesPDF.as_view()),
+    url(r"^historial-de-donaciones/(?P<id>)" , DonacionHistorialPDF.as_view()),
+    url(r"^voluntario-diploma/(?P<id>)" , DiplomaPDF.as_view())
 ] +  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
