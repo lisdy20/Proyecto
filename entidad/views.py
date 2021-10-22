@@ -16,7 +16,7 @@ def inicial_day(date):
     """Date spliter.
     """
     split= date.split('-')
-    init_date = '{}-{}-01'.format(split[0],split[1])
+    init_date = '{}-{}-01 00:00:00'.format(split[0],split[1])
     return init_date
 
 def fecha_con_hora(fecha):
@@ -44,7 +44,7 @@ class DonacionMensualesPDF(PDFTemplateView):
         ids = []
         for d in donaciones:
             ids.append(d.pk)
-        detalle = Tipodonacion.objects.filter(donacion__nombre__pk__in=ids)
+        detalle = Tipodonacion.objects.filter(donacion__pk__in=ids)
         return super(DonacionMensualesPDF, self).get_context_data(
                 pagesize="Letter",
                 title="Donaciones mensuales",
@@ -64,7 +64,7 @@ class DonacionHistorialPDF(PDFTemplateView):
         ids = []
         for d in donaciones:
             ids.append(d.pk)
-        detalle = Tipodonacion.objects.filter(donacion__nombre__pk__in=ids)
+        detalle = Tipodonacion.objects.filter(donacion__pk__in=ids)
         return super(DonacionHistorialPDF, self).get_context_data(
                 pagesize="Letter",
                 title="Donaciones mensuales",
